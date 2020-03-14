@@ -2,7 +2,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>在线考试系统-选择课程</title>
+    <title>在线答题 平台-选择课程</title>
     <link rel="stylesheet" type="text/css"
           href="/static/easyui/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css"
@@ -29,7 +29,7 @@
             })
             $("#subm").click(function(){
                 if($("#examlesson").val()==""){
-                    $.messager.alert("系统提示","请选择考试科目！");
+                    $.messager.alert("系统提示","请选择答题科目！");
                     return false;
                 }
                 return true;
@@ -39,11 +39,11 @@
 </head>
 <body>
 <div style="line-height:80px;height:80px;background-image:url('static/image/signinback.jpg');background-size:cover">
-    <font color="white" size="10" face="仿宋" style="font-weight:bold;margin-left:2%"> 在 线 考 试 系 统</font>
+    <font color="white" size="10" face="仿宋" style="font-weight:bold;margin-left:2%"> 在 线 答 题 系 统</font>
     <font id="ft" style="margin-left:20%">当 前 用 户：<span id="sp" th:text="${session.username}"></span></font>
 </div>
 <div style="margin-top:2%;margin-left:2%">
-    <font color="black">当前位置 ： 在线考试 >> 选择考试课程</font>
+    <font color="black">当前位置 ： 在线答题 >> 选择答题课程</font>
 </div>
 <br>
 <br>
@@ -51,7 +51,7 @@
     <form action="toExamPageList" method="post">
         <table cellpadding="15px">
             <tr>
-                <td>请选择考试课程</td>
+                <td>请选择答题课程</td>
                 <td><input id="examlesson" name="lessonid"></td>
             </tr>
             <tr>

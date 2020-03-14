@@ -19,12 +19,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
 
+//http://localhost:8081/stu/tologin
 /***
  * @Auther jzze
  * @Date 2019/12/28 
  */
 @CrossOrigin(origins = "*", maxAge = 3600)
-@Api(tags = "学生用户登录接口")
+@Api(tags = "学生用户接口")
 @Controller
 @RequestMapping("/stu")
 public class StuLoginController {
@@ -45,9 +46,9 @@ public class StuLoginController {
     }
 
     /**
-     * 登录逻辑处理
+     * 逻辑处理
      */
-    @ApiOperation(value = "学生用户登录")
+    @ApiOperation(value = "学生用户")
     @RequestMapping(value = "/loginsubmit")
     public String login(String username, String password, Model model, HttpSession session) {
         /**
@@ -61,7 +62,7 @@ public class StuLoginController {
         //判断用户是否是学生用户
         LoginUser user = userService.findByUsername(username);
         if (!user.getRoles().equals("stu")) {
-            model.addAttribute("msg", "登录失败");
+            model.addAttribute("msg", "失败");
             return "student/login";
         }
         //1.获取Subject
@@ -72,22 +73,22 @@ public class StuLoginController {
 
         //2.封装用户数据
         UsernamePasswordToken token = new UsernamePasswordToken(username, md5password.toString());
-        //3.执行登录方法
+        //3.执行方法
         try {
             subject.login(token);
 
             session.setAttribute("username", username);
-            //登录成功
+            //成功
             //跳转到对应的学生界面
             return "redirect:/stu/index";
         } catch (UnknownAccountException e) {
             //e.printStackTrace();
-            //登录失败:用户名不存在
+            //失败:用户名不存在
             model.addAttribute("msg", "用户名不存在");
             return "student/login";
         } catch (IncorrectCredentialsException e) {
             //e.printStackTrace();
-            //登录失败:密码错误
+            //失败:密码错误
             model.addAttribute("msg", "密码错误");
             return "student/login";
         }

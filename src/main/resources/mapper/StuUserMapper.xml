@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.StuUserMapper">
-   <!--	登录验证 -->
+   <!--	验证 -->
     <select id="findByUsername"   parameterType="String" resultType="com.example.pojo.LoginUser" >
     select username,password,roles from t_login where username = #{value}
   </select>

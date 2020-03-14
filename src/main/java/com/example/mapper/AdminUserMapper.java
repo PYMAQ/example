@@ -9,7 +9,7 @@ import java.util.List;
 //@Mapper
 @Repository
 public interface AdminUserMapper {
-    //登录
+    // 用户
     public LoginUser findByUsername(String username);
 
     //返回所有管理员用户信息给前端页面
@@ -17,7 +17,7 @@ public interface AdminUserMapper {
 
     //返回所有教师用户信息给前端页面
     public List<TeacherInformation> findTeacherByroles(String roles);
-    //增加各种登录用户
+    //增加各种用户
     public void addLoginUser(LoginUser loginUser);
 
      //修改各种用户数据

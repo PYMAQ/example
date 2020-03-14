@@ -4,7 +4,7 @@ import com.example.pojo.LoginUser;
 import com.example.pojo.StuInformation;
 
 public interface StuUserService {
-    //登录验证
+    //验证
     public LoginUser findByUsername(String username);
     public boolean findReisterUsername(String username);
     //注册用户账号

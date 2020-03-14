@@ -66,7 +66,7 @@ public class AdminUserServiceImpl implements AdminUserService {
         }
     }
 
-    //登录验证
+    //验证
     @Override
     public LoginUser findByUsername(String username) {
         return  adminUserMapper.findByUsername(username);

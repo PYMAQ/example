@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface StuUserMapper {
-    //登录
+    //
     public LoginUser findByUsername(String username);
 
     //判断用户名是否注册过

@@ -33,7 +33,7 @@ public class StuExamResultController {
     @Autowired
     private StuExamResultService stuExamResultService;
 
-    /*  计算学生考试成绩并存储到数据库
+    /*  计算学生答题成绩并存储到数据库
     **  将表单传输的name和value以map形式接受然后遍历它
      */
     @RequestMapping("/postExam")
@@ -96,12 +96,12 @@ public class StuExamResultController {
         model.addAttribute("resultmap2", resultmap2);
         return "student/examResult";
     }
-    //用户查询所有考试记录
+    //用户查询所有答题记录
     @RequestMapping("/queryResult")
     public String queryResult(Model model, HttpSession session){
         String username= (String) session.getAttribute("username");
 
-        //返回用户查询所有考试记录
+        //返回用户查询所有答题记录
         List<Map<String,Object>> queryList=stuExamResultService.findExamByUsername(username);
         model.addAttribute("queryList", queryList);
         return "student/examResultAll";
@@ -109,17 +109,17 @@ public class StuExamResultController {
 
 
 
-    //将考试信息保存到Excel
+    //将答题信息保存到Excel
     @RequestMapping("/saveExcel")
     public void saveExcel(HttpSession session, HttpServletResponse response)throws Exception{
         String username= (String) session.getAttribute("username");
-        //返回用户查询所有考试记录
+        //返回用户查询所有答题记录
         List<Map<String, Object>> listMap = stuExamResultService.findExamByUsername(username);
         Workbook workbook=new HSSFWorkbook();
-        Sheet sheet = workbook.createSheet("您的考试成绩单");
+        Sheet sheet = workbook.createSheet("您的答题成绩单");
         Row row=sheet.createRow(0);
         Cell cell00=row.createCell(0);
-        cell00.setCellValue("考试课程");
+        cell00.setCellValue("答题课程");
         Cell cell01=row.createCell(1);
         cell01.setCellValue("单选题成绩");
         Cell cell02=row.createCell(2);
@@ -127,7 +127,7 @@ public class StuExamResultController {
         Cell cell03=row.createCell(3);
         cell03.setCellValue("总成绩");
         Cell cell04=row.createCell(4);
-        cell04.setCellValue("考试时间");
+        cell04.setCellValue("答题时间");
         for(int i = 0;i<listMap.size();i++){
             row=sheet.createRow(i+1);
             Cell cell0=row.createCell(0);

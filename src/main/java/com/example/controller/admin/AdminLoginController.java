@@ -26,17 +26,17 @@ public class AdminLoginController {
     @Autowired
     private StuUserService userService;
 
-   //教师和管理员登录页面
+   //教师和管理员页面
     @RequestMapping("/alogin")
     public String tologin(){
         return "admin/adminLogin";
     }
-   //使用教师用户登录后的页面
+   //使用教师用户后的页面
     @RequestMapping("/teaindex")
     public String teaindex(){
         return "teacher/teaindex";
     }
-   //使用管理员用户登录的页面
+   //使用管理员用户的页面
     @RequestMapping("/adminindex")
     public String adminindex(){
         return "admin/adminindex";
@@ -58,7 +58,7 @@ public class AdminLoginController {
         LoginUser user = adminUserService.findByUsername(username);
         if (!(user.getRoles().equals("teacher")||user.getRoles().equals("admin"))) {
 //        if (!user.getRoles().equals("teacher")) {
-            model.addAttribute("msg", "登录失败");
+            model.addAttribute("msg", "失败");
             return "admin/adminLogin";
         }
          //1.获取Subject
@@ -69,12 +69,12 @@ public class AdminLoginController {
 
         //2.封装用户数据
         UsernamePasswordToken token = new UsernamePasswordToken(username, md5password.toString());
-        //3.执行登录方法
+        //3.执行方法
         try {
             subject.login(token);
 
 
-            //登录成功
+            //成功
             //根据用户权限，跳转到对应的页面
             if(user.getRoles().equals("teacher")) {
                 session.setAttribute("TeaUsername", username);
@@ -87,12 +87,12 @@ public class AdminLoginController {
             return "admin/adminLogin";
         } catch (UnknownAccountException e) {
             //e.printStackTrace();
-            //登录失败:用户名不存在
+            //失败:用户名不存在
             model.addAttribute("msg", "用户名不存在");
             return "admin/adminLogin";
         } catch (IncorrectCredentialsException e) {
             //e.printStackTrace();
-            //登录失败:密码错误
+            //失败:密码错误
             model.addAttribute("msg", "密码错误");
             return "admin/adminLogin";
         }

@@ -31,7 +31,7 @@
 
 
 
-	<!-- 进行增加各种登录用户-->
+	<!-- 进行增加各种用户-->
     <insert id="addLoginUser" parameterType="com.example.pojo.LoginUser">
 	INSERT INTO t_login
 			(
@@ -47,7 +47,7 @@
 			#{roles}
 			)
     </insert>
-	<!-- 根据id修改各种登录用户数据 -->
+	<!-- 根据id修改各种用户数据 -->
 	<update id="updateLoginUser" parameterType="com.example.pojo.LoginUser">
 		UPDATE t_login
 			SET

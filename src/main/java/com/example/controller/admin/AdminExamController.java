@@ -16,7 +16,7 @@ public class AdminExamController {
     @Autowired
     private AdminExamService adminExamService;
 
-    //管理员查看所有考试课程页面
+    //管理员查看所有答题课程页面
     @RequestMapping("/tomanageExam")
     public String Manageadmin(){
         return "admin/manageExam";

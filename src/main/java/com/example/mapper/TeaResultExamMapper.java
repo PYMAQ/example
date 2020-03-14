@@ -9,12 +9,12 @@ import java.util.List;
 //@Mapper
 @Repository
 public interface TeaResultExamMapper {
-    //返回所有自己考试课程下学生的考试成绩
+    //返回所有自己答题课程下学生的答题成绩
     public List<StuResult> manageStuExam(Integer id);
     public Integer findTeacheridByusername(String username);
-    //返回教师自己出的考试课程信息
+    //返回教师自己出的答题课程信息
     public List<ExamLesson> TeaExamlesson(String username);
-    //增加考试课程
+    //增加答题课程
     public void addExamLesson(ExamLesson examLesson);
 
 }

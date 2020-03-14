@@ -11,10 +11,10 @@ import java.util.Map;
 //@Mapper
 @Repository
 public interface StuExamResultMapper {
-    //添加学生考试成绩记录
+    //添加学生答题成绩记录
     public int addStuExamResult(StuResult stuResult);
 
     public StuInformation findExamStuByUsername(String username);
-    //返回用户考试所有记录
+    //返回用户答题所有记录
     public List<Map<String,Object>>findExamByUsername(String username);
 }

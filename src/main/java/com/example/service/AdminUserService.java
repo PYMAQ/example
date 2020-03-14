@@ -6,7 +6,7 @@ import com.example.pojo.TeacherInformation;
 import java.util.List;
 
 public interface AdminUserService {
-    //登录验证
+    //验证
     public LoginUser findByUsername(String username);
 
     //根据id删除loginuser

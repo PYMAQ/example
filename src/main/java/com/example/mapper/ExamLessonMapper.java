@@ -10,7 +10,7 @@ import java.util.List;
 public interface ExamLessonMapper {
     /**
      *
-     * 查询所有考试课程数据
+     * 查询所有答题课程数据
      */
 
     public List<ExamLesson> findExamLesson();

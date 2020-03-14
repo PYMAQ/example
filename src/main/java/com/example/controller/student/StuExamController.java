@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@Api(tags = "学生考试信息")
+@Api(tags = "学生答题信息")
 @Controller
 @RequestMapping("/stu")
 public class StuExamController {
@@ -27,14 +27,14 @@ public class StuExamController {
     private ExamLessonService examLessonService;
     //属性注入
 
-    //跳转到在线考试选择课程界面
+    //跳转到在线答题选择课程界面
     @RequestMapping("/toExam")
     public String toExam(){
         return "student/exam";
     }
 
-    //返回考试科目选择，返回数据为json数据
-    @ApiOperation(value = "考试科目选择")
+    //返回答题科目选择，返回数据为json数据
+    @ApiOperation(value = "答题科目选择")
     @RequestMapping("/ExamLessonlist")
     @ResponseBody  // 用于转换对象为json
     public List<ExamLesson> list(){
@@ -42,10 +42,10 @@ public class StuExamController {
         return list;
     }
 
-    //返回考试题目
+    //返回答题题目
     @RequestMapping("/toExamPageList")
     public String toExamPage(Integer lessonid, Model model, HttpSession session) {
-           //存储选择的考试课程id号
+           //存储选择的答题课程id号
            session.setAttribute("taotiid",lessonid);
 //        List<Map<String,Object>> questionsList  = exampleQuestionsService.findExamQuestions(3);
         //返回单选题目

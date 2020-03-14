@@ -2,7 +2,7 @@
             xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>在线考试系统-登录</title>
+    <title>在线答题 平台-登录</title>
     <link rel="stylesheet" type="text/css"
           href="/static/easyui/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css"
@@ -17,12 +17,14 @@
     <script type="text/javascript">
         function toregister(){
             window.location.href="sturegister";
+
         }
+        alert("恭喜Isaac登录成功！");
     </script>
 </head>
 <body style="background-image:url('/static/image/loginback.jpg');background-size:cover">
 <div style="text-align:center;margin-top:12%">
-    <font face="仿宋" size="10" color="white">考 生 登 录</font>
+    <font face="仿宋" size="10" color="white">用 户 登 录</font>
     <span style="color:red" th:text="${msg}"></span>
 </div>
 <div style="margin-top:3%;margin-left:40%">
@@ -39,6 +41,7 @@
             <tr>
                 <td><input type="submit" value="登录" style="background:yellow"></td>
                 <td align="right"><input type="button" id="btn" value="注册" style="background:yellow" onclick="toregister()"></td>
+
             </tr>
         </table>
     </form>

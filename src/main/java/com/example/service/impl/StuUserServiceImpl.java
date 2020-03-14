@@ -15,7 +15,7 @@ public class StuUserServiceImpl implements StuUserService {
     private StuUserMapper usermapper;
 
 
-    //登录验证
+    //验证
     @Override
     public LoginUser findByUsername(String username) {
         return usermapper.findByUsername(username);

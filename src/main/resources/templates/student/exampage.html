@@ -2,7 +2,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>在线考试系统-正在考试</title>
+    <title>在线答题 平台-正在答题</title>
     <link rel="stylesheet" type="text/css"
           href="/static/easyui/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css"
@@ -43,7 +43,7 @@
 
         function show_time(totalTime){
             if(totalTime==0){
-                alert("考试时间结束！系统将会自动提交试卷！");
+                alert("答题时间结束！系统将会自动提交答卷！");
                 $("form[name='examform']").submit();
             }
             var remainTime=totalTime-1;
@@ -62,10 +62,10 @@
 </head>
 <body class="easyui-layout">
 <div data-options="region:'north'" style="line-height:60px;height:80px;background-image:url('/static/image/signinback.jpg');background-size:cover">
-    <font color="white" size="10" face="仿宋" style="font-weight:bold;margin-left:2%"> 在 线 考 试 网</font>
+    <font color="white" size="10" face="仿宋" style="font-weight:bold;margin-left:2%"> 在 线 答 题 网</font>
     <font id="ft1" size="3px" style="margin-left:5%">当 前 用 户：<span id="sp" th:text="${session.username}"></span></font>
-    <font id="ft5" size="3px" style="margin-left:2%">考 试 科 目：<span id="sp5" th:text="${radioQuestionsList[0].lessonname}"></span></font>
-    <font id="ft3" size="3px" style="margin-left:2%">考 试 限 时：<span id="sp3">2分钟</span></font>
+    <font id="ft5" size="3px" style="margin-left:2%">答 题 科 目：<span id="sp5" th:text="${radioQuestionsList[0].lessonname}"></span></font>
+    <font id="ft3" size="3px" style="margin-left:2%">答 题 限 时：<span id="sp3">2分钟</span></font>
     <font id="ft4" size="3px" style="margin-left:2%">剩 余 时 间：<span id="sp4"></span></font>
 </div>
 

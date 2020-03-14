@@ -16,7 +16,7 @@
   </select>
 
 
-    <!-- 根据id修改学生登录用户数据 -->
+    <!-- 根据id修改学生用户数据 -->
     <update id="updateStuUser" parameterType="com.example.pojo.LoginUser">
 		UPDATE t_login
 			SET

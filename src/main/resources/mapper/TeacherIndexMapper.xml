@@ -23,7 +23,7 @@
   </select>
 
 
-    <!-- 添加考试试题 -->
+    <!-- 添加答题试题 -->
     <insert id="addExamQuestions" parameterType="com.example.pojo.Questions">
 		INSERT INTO questions
 			(
@@ -45,7 +45,7 @@
 			)
 	</insert>
 
-      <!-- 修改考试试题-->
+      <!-- 修改答题试题-->
     <update id="updateExamQuestions" parameterType="com.example.pojo.Questions">
 	 update questions
     set subject = #{subject},

@@ -9,7 +9,7 @@ public interface TeacherIndexService {
     public List<Questions>ExamQuestionByteacherid(Integer id);
     public List<ExamLesson> findExamLessonByteacherid(Integer id);
     public Questions findExamQuestionsById(Integer id);
-    //保存增加或者修改的考试试题
+    //保存增加或者修改的答题试题
     public void saveExamQuestions(Questions questions);
 
 }

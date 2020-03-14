@@ -27,21 +27,21 @@ public class TeacherIndexController {
     //属性注入
     @Autowired
     private TeacherIndexService teacherIndexService;
-    //学生考试成绩查询页面
+    //学生答题成绩查询页面
     @RequestMapping("/teaResultShow")
     public String ResultShow(){
         return "teacher/ResultShow";
     }
 
 
-    //考试题目显示操作页面
+    //答题题目显示操作页面
     @RequestMapping("/toExamQuestion")
     public String toExamQuestion(){
         return "teacher/ExamQuestion";
     }
 
 
-    //返回所有考试试题
+    //返回所有答题试题
     @RequestMapping("/ExamQuestion")
     @ResponseBody  // 用于转换对象为json
     public List<Questions>  ExamQuestionByteacherid(HttpSession session)
@@ -52,7 +52,7 @@ public class TeacherIndexController {
         return list;
     }
 
-    //返回考试科目选择，返回数据为json数据
+    //返回答题科目选择，返回数据为json数据
     @RequestMapping("/TeacherExamLessonlist")
     @ResponseBody  // 用于转换对象为json
     public List<ExamLesson> list(HttpSession session){

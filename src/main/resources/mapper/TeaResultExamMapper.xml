@@ -23,7 +23,7 @@
    where t.username=#{value}
    and t.teacherid=l.teacherid
   </select>
-    <!-- 进行增加考试课程信息-->
+    <!-- 进行增加答题课程信息-->
     <insert id="addExamLesson" parameterType="com.example.pojo.ExamLesson">
 	INSERT INTO lesson
 			(

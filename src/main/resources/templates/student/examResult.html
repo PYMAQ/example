@@ -2,7 +2,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>在线考试系统-当前考试成绩</title>
+    <title>在线答题 平台-当前答题分数</title>
     <script type="text/javascript" src="/static/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/static/easyui/jquery-3.1.1.js"></script>
     <!-- 引入自定义css文件 style.css -->
@@ -43,11 +43,11 @@
              style="background: #fff; padding: 40px 80px; margin: 120px; border: 7px solid #ccc;">
                 <table style="width: 400px;"class="groove">
             <tr>
-                <td colspan="2">本次考试成绩</td>
+                <td colspan="2">本次答题成绩</td>
             </tr>
                     <tr><td>姓名</td>  <td th:text="${resultmap2.stuname}"></td></tr>
                     <tr><td>学号</td>  <td th:text="${resultmap2.stuid}"></td></tr>
-                    <tr><td>考试课程</td>  <td th:text="${resultmap2.lessonname}"></td></tr>
+                    <tr><td>答题课程</td>  <td th:text="${resultmap2.lessonname}"></td></tr>
                     <tr><td>单选得分</td>  <td th:text="${resultmap1.rdioscores}"></td></tr>
                     <tr><td>多选得分</td>  <td th:text="${resultmap1.checkscores}"></td></tr>
                     <tr><td>总得分</td>    <td th:text="${resultmap1.total}"></td></tr>

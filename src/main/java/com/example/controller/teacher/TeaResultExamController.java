@@ -23,7 +23,7 @@ public class TeaResultExamController {
 
     //设计Map聚合存储需要给页面的对象数据
     private Map<String,Object> result = new HashMap<String,Object>();
-//传输所有自己课程考试学生的成绩信息
+//传输所有自己课程答题学生的成绩信息
     @RequestMapping("/manageStuExam")
     @ResponseBody  // 用于转换对象为json
     public List<StuResult> manageStuExam(HttpSession session){
@@ -38,7 +38,7 @@ public class TeaResultExamController {
     public String tologin(){
         return "teacher/Examlesson";
     }
-    //查询自己的所有考试课程信息
+    //查询自己的所有答题课程信息
 @RequestMapping("/teaExamLesson")
 @ResponseBody  // 用于转换对象为json
 public List<ExamLesson> TeaExamlesson(HttpSession session)
@@ -48,7 +48,7 @@ public List<ExamLesson> TeaExamlesson(HttpSession session)
     return list;
 }
 
-//增加考试课程
+//增加答题课程
     @RequestMapping("/saveExamlesson")
     @ResponseBody
     public Map<String,Object> saveExamLesson(ExamLesson examLesson, HttpSession session){

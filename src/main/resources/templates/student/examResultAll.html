@@ -2,7 +2,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>在线考试系统-当前考试成绩</title>
+    <title>在线答题 平台-当前答题分数</title>
     <script type="text/javascript" src="/static/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/static/easyui/jquery-3.1.1.js"></script>
     <!-- 引入自定义css文件 style.css -->
@@ -46,11 +46,11 @@
              style="background: #fff; padding: 40px 80px; margin: 30px; border: 7px solid #ccc;">
             <table style="width: 600px;"class="groove">
                 <tr>
-                    <td>考试课程</td>
+                    <td>答题科目</td>
                     <td>单选得分</td>
                     <td>多选得分</td>
                     <td>总得分</td>
-                    <td>考试时间</td>
+                    <td>答题时间</td>
                    </tr>
                 <tr  th:each ="m,iterStat:${queryList}">
                     <td th:text="${m.lessonname}"></td>
